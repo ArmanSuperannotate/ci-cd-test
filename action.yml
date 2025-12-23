@@ -1,21 +1,18 @@
-name: Create Release
+name: "CI CD Test Action"
+description: "Greets someone"
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
 
-on:
-  push:
-    tags:
-      - "*"
+  SA_TOKEN:
+    description: "SuperAnnotate access token"
+    required: true
 
-jobs:
-  create-release:
-    runs-on: ubuntu-latest
+  SA_URL:
+    description: "SuperAnnotate URL"
+    required: false
 
-    steps:
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ github.ref_name }}
-          name: Release ${{ github.ref_name }}
-          body: |
-            Release ${{ github.ref_name }} of components repository ${{ github.repository }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+runs:
+  using: "node20"
+  main: "pipe/pipe.js"
