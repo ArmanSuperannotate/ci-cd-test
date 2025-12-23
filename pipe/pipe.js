@@ -6,6 +6,9 @@ const yaml = require("js-yaml");
 const https = require("https");
 const http = require("http");
 
+console.log("SA_TOKEN", process.env);
+console.log("SA_URL", process.env.SA_URL);
+
 // Configuration
 const SA_URL = process.env.SA_URL || "https://zimmer.superannotate.com";
 const SA_API_URL = `${SA_URL}/api/v1/custom_task`;
