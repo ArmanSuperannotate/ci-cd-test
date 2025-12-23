@@ -15,4 +15,15 @@ inputs:
 
 runs:
   using: "node20"
-  main: "pipe/pipe.js"
+  steps:
+    - name: Install dependencies
+      shell: bash
+      run: |
+        npm install
+    - name: Run action
+      shell: bash
+      env:
+        SA_TOKEN: ${{ inputs.sa_token }}
+        SA_URL: ${{ inputs.sa_url }}
+      run: |
+        node pipe/pipe.js
