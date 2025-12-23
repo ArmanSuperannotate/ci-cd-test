@@ -19,6 +19,7 @@ runs:
     - name: Install dependencies
       shell: bash
       run: |
+        cd ${{ github.action_path }}
         npm install
     - name: Run action
       shell: bash
@@ -26,4 +27,5 @@ runs:
         SA_TOKEN: ${{ inputs.sa_token }}
         SA_URL: ${{ inputs.sa_url }}
       run: |
+        cd ${{ github.action_path }}
         node pipe/pipe.js
