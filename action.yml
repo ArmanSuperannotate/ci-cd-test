@@ -5,11 +5,11 @@ inputs:
     description: "Who to greet"
     required: true
 
-  SA_TOKEN:
+  sa_token:
     description: "SuperAnnotate access token"
     required: true
 
-  SA_URL:
+  sa_url:
     description: "SuperAnnotate URL"
     required: false
 
