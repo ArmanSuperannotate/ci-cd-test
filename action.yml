@@ -26,6 +26,6 @@ runs:
       env:
         SA_TOKEN: ${{ inputs.sa_token }}
         SA_URL: ${{ inputs.sa_url }}
+        NODE_PATH: ${{ github.action_path }}/node_modules
       run: |
-        cd ${{ github.action_path }}
-        node pipe/pipe.js
+        node ${{ github.action_path }}/pipe/pipe.js
